@@ -36,7 +36,7 @@ class Tensor:
         for t in reversed(topo):
             t._backward()
 
-    # ---------------- ops ----------------
+    # operations
     def __add__(self, other):
         out = Tensor(self.data + other.data, (self, other), "add")
         def _backward():
